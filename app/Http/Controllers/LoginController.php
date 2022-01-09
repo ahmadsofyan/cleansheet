@@ -20,7 +20,6 @@ class LoginController extends Controller
         return redirect('login');
     }
     public function saveregis (Request $request){
-        //dd($request->all());
         User::create([
             'name'=>$request->name,
             'email'=>$request->email,

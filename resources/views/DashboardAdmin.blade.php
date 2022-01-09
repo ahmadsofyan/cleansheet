@@ -48,8 +48,8 @@
                   </li>
                   <li><a href="#"><i class="fa fa-desktop"></i> Data Karyawan <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="tabletampil.html">Tampil Data</a></li>
-                      <li><a href="tambah data.html">Tambah Data</a></li>
+                      
+                      <li><a href="/Tambahdata">Tambah Data</a></li>
                     </ul>
                   </li>
                   <li><a href="/Regis"><i class="fa fa-registered"></i> Registrasi <span class="form"></span></a>
@@ -84,6 +84,39 @@
         <!-- /top navigation -->
         <!-- page content - HALAMAN UTAMA ISI DISINI -->
         <div class="right_col" role="main">
+        <center><h2>daftar karyawan</h2></center>
+          <table border="1" cellspacing="" cellpadding="8">
+            <tr>
+                
+                <td>Nama</td>
+                <td>Tanggal</td>
+                <td>Jenis Pekerjaan</td>
+                <td>Durasi</td>
+                <td>Pembayaran</td>
+                <td>Makan</td>
+                <td>Transport</td>
+                <td>Total</td>
+                <td>Status</td>
+                <td>Option</td>
+            </tr>
+            @foreach($slip_gajihs as $data)
+            <tr>
+            
+            <td>{{$data->name}}</td>
+            <td>{{$data->tanggal}}</td>
+            <td>{{$data->jenis_pekerjaan}}</td>
+            <td>{{$data->durasi}}</td>
+            <td>{{$data->pembayaran}}</td>
+            <td>{{$data->makan}}</td>
+            <td>{{$data->transport}}</td>
+            <td>{{$data->total}}</td>
+            <td>{{$data->status}}</td>                          
+                <td><button type="button" class="btn btn-primary">Edit</button>
+                  <button type="button" class="btn btn-warning">Delete</button>
+                </td>
+            </tr>
+            @endforeach
+        </table>
         </div>
         <!-- footer content -->
         <footer>

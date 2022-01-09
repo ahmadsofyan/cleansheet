@@ -35,7 +35,10 @@ Route::group(['middleware'=>['auth','cekrole:Admin']] ,function () {
     Route::get('/Regis', function () {
         return view('Registrasi');
     });
-
+    Route::get('/Tambahdata', function () {
+        return view('Tambahdata');
+    });
+    Route::get('/DashboardAdmin',[App\Http\Controllers\TampildataController::class, 'tampildata'])->name('tampildata');
 });
 
 //Route::group(['middleware'=>['auth','cekrole:2']] ,function () {
