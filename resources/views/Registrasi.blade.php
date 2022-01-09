@@ -19,6 +19,7 @@
     <link href="assets/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="assets/css/custom.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body class="nav-md">
     <div class="container body">
@@ -36,7 +37,7 @@
               <div class="profile_pic">
               </div>
               <div class="profile_info">
-                <h2>{{auth()->user()->name}}</h2>
+                <h2> {{auth()->user()->name}}</h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -84,6 +85,38 @@
         <!-- /top navigation -->
         <!-- page content - HALAMAN UTAMA ISI DISINI -->
         <div class="right_col" role="main">
+        <div class="wrapper">
+         <div class="title-text">
+            <div class="title signup">
+               Form Registrasi
+            </div>
+         </div>
+         <div class="form-container">
+               <div class="slider-tab"></div>
+            </div>
+            <div class="form-inner">
+               <form action="{{route('saveregis')}}" class="signup"  method="post">
+               {{ csrf_field() }}
+                  <div class="field">
+                     <input type="text" name="name" placeholder="Masukan username" required>
+                  </div>
+                  <div class="field">
+                     <input type="email" name="email" placeholder="Masukan Email" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" name="password" placeholder="Masukan password" required>
+                  </div>
+                  <select class="field" name="role">
+                     <option value="Admin">Admin</option>
+                     <option value="Mitra">Mitra</option>
+                   </select>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Daftar">
+                  </div>
+               </form>
+            </div>
+         </div>
         </div>
         <!-- footer content -->
         <footer>

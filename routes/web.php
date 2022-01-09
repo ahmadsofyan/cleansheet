@@ -22,14 +22,28 @@ Route::get('/', function () {
 Route::get('/login', function () {
     return view('pengguna.Login');
 })->name('login');
+
 Route::post('/postlogin',[App\Http\Controllers\LoginController::class, 'postlogin'])->name('postlogin');
 Route::get('/logout',[App\Http\Controllers\LoginController::class, 'logout'])->name('logout');
+Route::post('/saveregis',[App\Http\Controllers\LoginController::class, 'saveregis'])->name('saveregis');
 
-Route::group(['middleware'=>['auth','cekrole:1,user']] ,function () {
+Route::group(['middleware'=>['auth','cekrole:Admin']] ,function () {
+    Route::get('DashboardAdmin', function () {
+        return view('DashboardAdmin');
+    
+    });
+    Route::get('/Regis', function () {
+        return view('Registrasi');
+    });
+
+});
+
+//Route::group(['middleware'=>['auth','cekrole:2']] ,function () {
   
-    Route::get('/DashboardAdmin', function () {
-    return view('DashboardAdmin');
+    Route::get('/mitra', function () {
+        return view('DashboardMitra');
+    
 });
-Route::get('/DashboardAdmin',[App\Http\Controllers\AdminController::class, 'Admin'])->name('Admin');
-Route::get('/DashboardMitra',[App\Http\Controllers\AdminController::class, 'Mitra'])->name('Mitra');
-});
+
+//Route::get('/DashboardAdmin',[App\Http\Controllers\AdminController::class, 'Admin'])->name('Admin');
+//});
