@@ -99,9 +99,13 @@
         <form action="{{route('savedata')}}"  class="signup"  method="post">
         {{ csrf_field() }}
 
-          <div class="field">
-            <input type="text" name="user_id"  placeholder="userid" required>
-          </div>
+          
+            <select  class="field" name="user_id"  id="user_id" required>
+              <option disable value>Name</option>
+              @foreach($Jab as $item)
+              <option  value="{{$item->id}}">{{$item->name}}</option>
+              @endforeach
+            </select>
           
           <div class="field">
             <input type="date" name="tanggal" placeholder="userid"  required>
@@ -153,7 +157,7 @@
         <!-- /footer content -->
       </div>
     </div>
-
+    @include('sweetalert::alert')
   <script type="text/javascript">
     function sum(){
       var txtFirstNumberValue = document.getElementById('bayar').value;
@@ -181,6 +185,6 @@
     <script src="assets/skycons/skycons.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="assets/js/custom.min.js"></script>
-
+   
   </body>
 </html>

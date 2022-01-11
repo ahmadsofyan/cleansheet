@@ -103,7 +103,7 @@
             <tr>
            
             <td>{{$data->user->name}}</td>
-            <td>{{$data->tanggal}}</td>
+            <td>{{date('d-m-y',strtotime($data->tanggal))}}</td>
             <td>{{$data->jenis_pekerjaan}}</td>
             <td>{{$data->durasi}}</td>
             <td>{{$data->pembayaran}}</td>
@@ -111,8 +111,8 @@
             <td>{{$data->transport}}</td>
             <td>{{$data->total}}</td>
             <td>{{$data->status}}</td>                          
-                <td><button type="button" class="btn btn-primary">Edit</button>
-                  <button type="button" class="btn btn-warning">Delete</button>
+                <td><a class="btn btn-primary" href="{{ url('/edit',$data->id) }}" role="button">Edit</a>
+                <a class="btn btn-primary" href="/Hapus" role="button" >Delete</a>
                 </td>
             </tr>
             @endforeach

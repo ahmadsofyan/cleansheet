@@ -36,10 +36,19 @@ Route::group(['middleware'=>['auth','cekrole:Admin']] ,function () {
     Route::get('/Regis', function () {
         return view('Registrasi');
     });
+    Route::get('/edit', function () {
+        return view('Edit');
+    });
+    Route::get('/Hapus', function () {
+        return view('hapus');
+    });
     Route::get('/Tambahdata', function () {
         return view('Tambahdata');
     });
     Route::get('/DashboardAdmin',[App\Http\Controllers\TampildataController::class, 'tampildata'])->name('tampildata');
+    Route::get('/Tambahdata',[App\Http\Controllers\TambahdataController::class, 'ini'])->name('ini');
+    Route::get('/edit',[App\Http\Controllers\TambahdataController::class, 'view'])->name('view');
+    Route::get('/edit/{id}',[App\Http\Controllers\TambahdataController::class, 'update'])->name('update');
 });
 
 //Route::group(['middleware'=>['auth','cekrole:2']] ,function () {

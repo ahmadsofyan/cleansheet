@@ -3,9 +3,18 @@
 namespace App\Http\Controllers;
 use App\Models\slip_gajih;
 use Illuminate\Http\Request;
+use App\Models\User;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class TambahdataController extends Controller
 {
+    public function ini(){
+        $Jab  =   User::all();
+        return view('Tambahdata',compact('Jab'));
+    }
+
+
     public function savedata(Request $request){
         //dd($request->all());
         slip_gajih::create([
@@ -19,6 +28,18 @@ class TambahdataController extends Controller
    'total'=>$request->total,
     'status'=>$request->status,
         ]);
-        return view('Tambahdata');
+        Alert::success('Congrats', 'data sudah tersimpan');
+        $Jab  =   User::all();
+        return view('Tambahdata',compact('Jab'));
+    }
+    public function view(){
+        $Jab  =   User::all();
+        return view('Edit',compact('Jab'));
+    }
+    public function update($id){
+
+        $Jab  =   User::all();
+        $ganti = slip_gajih::findorfail($id);
+        return view('Edit',compact('ganti'),compact('Jab'));
     }
 }

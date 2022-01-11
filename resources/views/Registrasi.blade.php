@@ -49,8 +49,8 @@
                   </li>
                   <li><a href="#"><i class="fa fa-desktop"></i> Data Karyawan <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="tabletampil.html">Tampil Data</a></li>
-                      <li><a href="tambah data.html">Tambah Data</a></li>
+                      <li><a href="/DashboardAdmin">Tampil Data</a></li>
+                      <li><a href="/Tambahdata">Tambah Data</a></li>
                     </ul>
                   </li>
                   <li><a href="/Regis"><i class="fa fa-registered"></i> Registrasi <span class="form"></span></a>
@@ -145,6 +145,6 @@
     <script src="assets/skycons/skycons.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="assets/js/custom.min.js"></script>
-
+    @include('sweetalert::alert')
   </body>
 </html>

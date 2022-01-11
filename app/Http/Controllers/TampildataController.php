@@ -10,7 +10,7 @@ class TampildataController extends Controller
 {
     public function tampildata()
 {
-    $slip_gajihs  =  slip_gajih::with('user')->latest()->paginate();
+    $slip_gajihs  =  slip_gajih::with('user')->latest()->paginate(1000);
              
    return view('/DashboardAdmin', ['slip_gajihs' => $slip_gajihs]);
     }
