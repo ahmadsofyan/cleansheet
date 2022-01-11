@@ -24,6 +24,9 @@ class User extends Authenticatable
         'role',
         
     ];
+    public function slip_gajih(){
+        return $this->hasMany(slip_gajih::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.

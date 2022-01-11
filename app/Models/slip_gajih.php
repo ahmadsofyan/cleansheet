@@ -26,6 +26,9 @@ class slip_gajih extends Model
          'status',
 
     ];
+    public function User(){
+        return $this->belongsTo(User::class);
+    }
     /**
      * The attributes that should be cast.
      *

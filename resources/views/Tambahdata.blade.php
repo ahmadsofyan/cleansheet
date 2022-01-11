@@ -19,6 +19,8 @@
     <link href="assets/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="assets/css/custom.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+  
   </head>
   <body class="nav-md">
     <div class="container body">
@@ -36,7 +38,7 @@
               <div class="profile_pic">
               </div>
               <div class="profile_info">
-                <h2>Khoirun Nurul Musthofa</h2>
+                <h2>{{auth()->user()->name}}</h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -48,11 +50,11 @@
                   </li>
                   <li><a href="#"><i class="fa fa-desktop"></i> Data Karyawan <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="tabletampil.html">Tampil Data</a></li>
-                      <li><a href="tambah data.html">Tambah Data</a></li>
+                      <li><a href="/DashboardAdmin">Tampil Data</a></li>
+                      
                     </ul>
                   </li>
-                  <li><a href="regis dashboard.html"><i class="fa fa-registered"></i> Registrasi <span class="form"></span></a>
+                  <li><a href="/Regis"><i class="fa fa-registered"></i> Registrasi <span class="form"></span></a>
                   </li>
                 </ul>
               </div>
@@ -71,10 +73,10 @@
               <ul class=" navbar-right">
                 <li class="nav-item dropdown open" >
                   <a href="#" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                    Khoirun Nurul Musthofa
+                  {{auth()->user()->name}}
                   </a>
                   <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item"  href="logout.php"><i class="fa fa-sign-out pull-right"></i> Log Out </a>
+                    <a class="dropdown-item"  href="{{route('logout')}}"><i class="fa fa-sign-out pull-right"></i> Log Out </a>
                   </div>
                 </li>
               </ul>
@@ -84,37 +86,62 @@
         <!-- /top navigation -->
         <!-- page content - HALAMAN UTAMA ISI DISINI -->
         <div class="right_col" role="main">
-          <label>Nama</label>
-            <input type="text" name="nama" class="form-control">
-            <label>Tanggal</label>
-            <input type="date" name="Tanggal" class="form-control">
-            <label>Jenis Pekerjaan</label>
-            <select class="form-control" name="Jenis Pekerjaan">
-              <option>General Cleaning</option>
-              <option>Deep Cleaning</option>
-              <option>Hydrovacum</option>
-              <option>Cuci Kasur</option>
-              <option>Cuci Sofa</option>
+        <div class="wrapper">
+        <div class="title-text">
+            <div class="title signup">
+               Menambah data
+            </div>
+         </div>
+        <div class="form-container">
+        <div class="slider-tab"></div>
+            </div>
+            <div class="form-inner">
+        <form action="{{route('savedata')}}"  class="signup"  method="post">
+        {{ csrf_field() }}
+
+          <div class="field">
+            <input type="text" name="user_id"  placeholder="userid" required>
+          </div>
+          
+          <div class="field">
+            <input type="date" name="tanggal" placeholder="userid"  required>
+          </div>
+          
+            <select class="field" name="jenis_pekerjaan">
+              <option value="GeneralCleaning">General Cleaning</option>
+              <option value="DeepCleaning">Deep Cleaning</option>
+              <option value="Hydrovacum">Hydrovacum</option>
+              <option value="CuciKasur">Cuci Kasur</option>
+              <option value="CuciSofa">Cuci Sofa</option>
             </select>
-            <label>Durasi</label>
-            <input type="text" name="Durasi" class="form-control">
-            <label>Pembayaran</label>
-            <input type="text" name="Pembayaran" class="form-control">
-            <label>Makan</label>
-            <input type="text" name="Makan" class="form-control">
-            <label>Transport</label>
-            <input type="text" name="Transport" class="form-control">
-            <label>Total</label>
-            <input type="text" name="Total" class="form-control">
-            <label>Status</label>
-            <select class="form-control" name="Status">
-              <option>Pending</option>
-              <option>Batal</option>
-              <option>Berhasil</option>
+            <div class="field">
+            <input type="text" name="durasi" placeholder="durasi"  required>
+          </div>
+          <div class="field">
+            <input type="number" name="pembayaran" id="bayar" onkeyup="sum();" placeholder="pembayaran"  >
+          </div>
+          <div class="field">
+            <input type="number" name="makan" id="maem" onkeyup="sum();" placeholder="makan"  >
+          </div>
+          <div class="field">
+            <input type="number" name="transport" id="trans" onkeyup="sum();" placeholder="transport">
+          </div>
+          <div class="field">
+            <input type="number" name="total" id="hasil" onkeyup="sum();" placeholder="total"  readonly>
+          </div>
+            
+            <select class="field" name="status">
+              <option value="pending">Pending</option>
+              <option value="Batal">Batal</option>
+              <option value="Berhasil">Berhasil</option>
             </select>
-            <br>
-              <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon"></i>Hapus</button>
-              <button type="button" class="btn btn-primary">Simpan</button>
+            <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="simpan">
+                  </div>
+
+
+            </div>
         </div>
         <!-- footer content -->
         <footer>
@@ -127,6 +154,17 @@
       </div>
     </div>
 
+  <script type="text/javascript">
+    function sum(){
+      var txtFirstNumberValue = document.getElementById('bayar').value;
+      var txtSecondNumberValue = document.getElementById('maem').value;
+      var txtThirdNumberValue = document.getElementById('trans').value;
+      var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue) + parseInt(txtThirdNumberValue);
+      if (!isNaN(result)) {
+        document.getElementById('hasil').value = result;
+      }
+    }
+    </script>
     <!-- jQuery -->
     <script src="assets/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->

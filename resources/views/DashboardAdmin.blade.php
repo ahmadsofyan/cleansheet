@@ -101,8 +101,8 @@
             </tr>
             @foreach($slip_gajihs as $data)
             <tr>
-            
-            <td>{{$data->name}}</td>
+           
+            <td>{{$data->user->name}}</td>
             <td>{{$data->tanggal}}</td>
             <td>{{$data->jenis_pekerjaan}}</td>
             <td>{{$data->durasi}}</td>

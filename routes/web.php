@@ -26,6 +26,7 @@ Route::get('/login', function () {
 Route::post('/postlogin',[App\Http\Controllers\LoginController::class, 'postlogin'])->name('postlogin');
 Route::get('/logout',[App\Http\Controllers\LoginController::class, 'logout'])->name('logout');
 Route::post('/saveregis',[App\Http\Controllers\LoginController::class, 'saveregis'])->name('saveregis');
+Route::post('/savedata',[App\Http\Controllers\TambahdataController::class, 'savedata'])->name('savedata');
 
 Route::group(['middleware'=>['auth','cekrole:Admin']] ,function () {
     Route::get('DashboardAdmin', function () {

@@ -13,9 +13,9 @@ class CreateSlipGajiTable extends Migration
      */
     public function up()
     {
-        Schema::create('slip_gaji', function (Blueprint $table) {
+        Schema::create('slip_gajihs', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id');
+            $table->foreignId('user_id');
             $table->date('tanggal');
             $table->string('jenis_pekerjaan');
             $table->integer('durasi')->nullable();
