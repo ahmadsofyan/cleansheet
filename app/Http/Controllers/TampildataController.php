@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\slip_gajih;
 use RealRashid\SweetAlert\Facades\Alert;
-
+use Illuminate\Pagination\Paginator;
 
 use Illuminate\Http\Request;
 
@@ -11,9 +11,9 @@ class TampildataController extends Controller
 {
     public function tampildata()
 {
-    $slip_gajihs  = slip_gajih::with('user')->latest()->paginate(1000);
-             
-   return view('/DashboardAdmin', compact('slip_gajihs'));
+    $slip_gajihs  = slip_gajih::with('user')->latest()->paginate(5);
+    Paginator::useBootstrap();
+    return view('/DashboardAdmin', compact('slip_gajihs'));
     }
 
     public function hapusdata(Request $request,$id){
@@ -22,6 +22,6 @@ class TampildataController extends Controller
         Alert::success('Congrats', 'data sudah dihapus');
         return back();
     }
-
+    
 
 }

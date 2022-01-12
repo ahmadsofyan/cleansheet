@@ -84,8 +84,9 @@
         <!-- /top navigation -->
         <!-- page content - HALAMAN UTAMA ISI DISINI -->
         <div class="right_col" role="main">
+  
         <center><h2>daftar karyawan</h2></center>
-          <table border="1" cellspacing="" cellpadding="8">
+          <table class="table table-striped table-hover">
             <tr>
                 <td>No</td>
                 <td>Nama</td>
@@ -116,7 +117,9 @@
                 </td>
             </tr>
             @endforeach
+            
         </table>
+        {!!$slip_gajihs->links() !!}
         </div>
         <!-- footer content -->
         <footer>
