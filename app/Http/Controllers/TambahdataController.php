@@ -37,9 +37,24 @@ class TambahdataController extends Controller
         return view('Edit',compact('Jab'));
     }
     public function update($id){
-
+        
         $Jab  =   User::all();
-        $ganti = slip_gajih::findorfail($id);
+        $ganti = slip_gajih::with('user')->findorfail($id);
         return view('Edit',compact('ganti'),compact('Jab'));
+    }
+    public function ubah(Request $request,$id){
+        $Jab  =   User::all();
+        $ganti = slip_gajih::with('user')->findorfail($id);
+        $ganti->update($request->all());
+        Alert::success('Congrats', 'data sudah diubah');
+        return view('Edit',compact('ganti'),compact('Jab'));
+    }
+   
+
+    public function hapusdata(Request $request,$id){
+        $ganti = slip_gajih::findorfail($id);
+        $ganti->delete();
+        Alert::success('Congrats', 'data sudah dihapus');
+        return view('/DashboardAdmin');
     }
 }

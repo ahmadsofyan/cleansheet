@@ -39,9 +39,7 @@ Route::group(['middleware'=>['auth','cekrole:Admin']] ,function () {
     Route::get('/edit', function () {
         return view('Edit');
     });
-    Route::get('/Hapus', function () {
-        return view('hapus');
-    });
+    
     Route::get('/Tambahdata', function () {
         return view('Tambahdata');
     });
@@ -49,6 +47,8 @@ Route::group(['middleware'=>['auth','cekrole:Admin']] ,function () {
     Route::get('/Tambahdata',[App\Http\Controllers\TambahdataController::class, 'ini'])->name('ini');
     Route::get('/edit',[App\Http\Controllers\TambahdataController::class, 'view'])->name('view');
     Route::get('/edit/{id}',[App\Http\Controllers\TambahdataController::class, 'update'])->name('update');
+    Route::post('/edit/{id}',[App\Http\Controllers\TambahdataController::class, 'ubah'])->name('ubah');
+    Route::get('/DashboardAdmin/{id}',[App\Http\Controllers\TampildataController::class, 'hapusdata'])->name('hapusdata');
 });
 
 //Route::group(['middleware'=>['auth','cekrole:2']] ,function () {

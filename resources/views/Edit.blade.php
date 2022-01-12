@@ -97,12 +97,12 @@
         <div class="slider-tab"></div>
             </div>
             <div class="form-inner">
-        <form action="{{ route('update',$ganti->id) }}"  class="signup"  method="post">
+        <form action="{{ route('ubah',$ganti->id) }}"  class="signup"  method="post">
         {{ csrf_field() }}
 
           
             <select  class="field" name="user_id"  id="user_id" required>
-              <option disable value>Name</option>
+              <option value="{{$ganti->user_id}}">{{$ganti->user->name}}</option>
               @foreach($Jab as $item)
               <option  value="{{$item->id}},">{{$item->name}}</option>
               @endforeach

@@ -87,7 +87,7 @@
         <center><h2>daftar karyawan</h2></center>
           <table border="1" cellspacing="" cellpadding="8">
             <tr>
-                
+                <td>No</td>
                 <td>Nama</td>
                 <td>Tanggal</td>
                 <td>Jenis Pekerjaan</td>
@@ -101,7 +101,7 @@
             </tr>
             @foreach($slip_gajihs as $data)
             <tr>
-           
+            <td>{{$loop->iteration}}</td>
             <td>{{$data->user->name}}</td>
             <td>{{date('d-m-y',strtotime($data->tanggal))}}</td>
             <td>{{$data->jenis_pekerjaan}}</td>
@@ -112,7 +112,7 @@
             <td>{{$data->total}}</td>
             <td>{{$data->status}}</td>                          
                 <td><a class="btn btn-primary" href="{{ url('/edit',$data->id) }}" role="button">Edit</a>
-                <a class="btn btn-primary" href="/Hapus" role="button" >Delete</a>
+                <a class="btn btn-primary" href="{{ url('/DashboardAdmin',$data->id) }}" role="button" >Delete</a>
                 </td>
             </tr>
             @endforeach
@@ -128,7 +128,7 @@
         <!-- /footer content -->
       </div>
     </div>
-
+    @include('sweetalert::alert')
     <!-- jQuery -->
     <script src="assets/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
