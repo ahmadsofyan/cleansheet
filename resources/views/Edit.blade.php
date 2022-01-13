@@ -114,11 +114,11 @@
           
             <select class="field" name="jenis_pekerjaan">
             <option value="{{$ganti->jenis_pekerjaan}}">{{$ganti->jenis_pekerjaan}}</option>
-              <option value="{{$ganti->jenis_pekerjaan}}">General Cleaning</option>
-              <option value="{{$ganti->jenis_pekerjaan}}">Deep Cleaning</option>
-              <option value="{{$ganti->jenis_pekerjaan}}">Hydrovacum</option>
-              <option value="{{$ganti->jenis_pekerjaan}}">Cuci Kasur</option>
-              <option value="{{$ganti->jenis_pekerjaan}}">Cuci Sofa</option>
+              <option value="General Cleaning">General Cleaning</option>
+              <option value="Deep Cleaning">Deep Cleaning</option>
+              <option value="Hydrovacum">Hydrovacum</option>
+              <option value="Cuci Kasur">Cuci Kasur</option>
+              <option value="Cuci Sofa">Cuci Sofa</option>
             </select>
             <div class="field">
             <input type="text" name="durasi" placeholder="durasi" value="{{$ganti->durasi}}" required>
@@ -138,9 +138,9 @@
             
             <select class="field" name="status">
               <option value="{{$ganti->status}}">{{$ganti->status}}</option>
-              <option value="{{$ganti->status}}">Berhasil</option>
-              <option value="{{$ganti->status}}">Pending</option>
-              <option value="{{$ganti->status}}">Batal</option>
+              <option value="Berhasil">Berhasil</option>
+              <option value="Pending">Pending</option>
+              <option value="Batal">Batal</option>
             </select>
             <div class="field btn">
                      <div class="btn-layer"></div>
