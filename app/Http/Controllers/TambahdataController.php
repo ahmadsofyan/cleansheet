@@ -51,10 +51,5 @@ class TambahdataController extends Controller
     }
    
 
-    public function hapusdata(Request $request,$id){
-        $ganti = slip_gajih::findorfail($id);
-        $ganti->delete();
-        Alert::success('Congrats', 'data sudah dihapus');
-        return view('/DashboardAdmin');
-    }
+   
 }

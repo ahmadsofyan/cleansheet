@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 use App\Models\slip_gajih;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Pagination\Paginator;
-
+use App\Models\User;
 use Illuminate\Http\Request;
+use Auth;
 
 class TampildataController extends Controller
 {
@@ -22,6 +23,12 @@ class TampildataController extends Controller
         Alert::success('Congrats', 'data sudah dihapus');
         return back();
     }
-    
+
+     public function tampilmitra(){
+       
+        $mitra = slip_gajih::with('user')->get();
+        
+         return view('DashboardMitra', ['mitra' =>  $mitra]);
+     }
 
 }

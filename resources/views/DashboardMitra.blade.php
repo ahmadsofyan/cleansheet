@@ -66,8 +66,42 @@
                 </div>
             </div>
         </nav>
+ <!--   Mainbody   -->
+
+ <table class="table table-striped">
+ <tr>
+                
+                <td>Nama</td>
+                <td>Tanggal</td>
+                <td>Jenis Pekerjaan</td>
+                <td>Durasi</td>
+                <td>Pembayaran</td>
+                <td>Makan</td>
+                <td>Transport</td>
+                <td>Total</td>
+                <td>Status</td>
+                
+            </tr>
+            @foreach($mitra as $view)
+            @if ($view->user->id == Auth::user()->id) 
+            <tr>
+            <td>{{$view->user->name}}</td>
+            <td>{{date('d-m-y',strtotime($view->tanggal))}}</td>
+            <td>{{$view->jenis_pekerjaan}}</td>
+            <td>{{$view->durasi}}</td>
+            <td>{{$view->pembayaran}}</td>
+            <td>{{$view->makan}}</td>
+            <td>{{$view->transport}}</td>
+            <td>{{$view->total}}</td>
+            <td>{{$view->status}}</td>      
+            </tr>
+            @endif
+            @endforeach
+</table>
+
     </div>
 </div>
+
 </body>
     <!--   Core JS Files   -->
     <script src="assetmitra/js/jquery.3.2.1.min.js" type="text/javascript"></script>
