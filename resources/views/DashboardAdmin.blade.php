@@ -51,6 +51,12 @@
                       
                       <li><a href="/Tambahdata">Tambah Data</a></li>
                     </ul>
+                    <li><a href="#"><i class="fa fa-registered"></i> Export data <span class="form"></span></a>
+                    <ul class="nav child_menu">
+                      
+                      <li><a href="/export">slip gajih</a></li>
+                    </ul>
+                  </li>
                   </li>
                   <li><a href="/Regis"><i class="fa fa-registered"></i> Registrasi <span class="form"></span></a>
                   </li>
@@ -70,6 +76,8 @@
               <nav class="nav navbar-nav">
               <ul class=" navbar-right">
                 <li class="nav-item dropdown open" >
+               
+
                   <a href="#" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
                   {{auth()->user()->name}}
                   </a>

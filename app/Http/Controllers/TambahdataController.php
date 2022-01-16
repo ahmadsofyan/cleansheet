@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 use App\Models\slip_gajih;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Controllers\Controller;
+use App\Exports\slip_gajihExport;
 use RealRashid\SweetAlert\Facades\Alert;
 
 
@@ -50,6 +53,8 @@ class TambahdataController extends Controller
         return view('Edit',compact('ganti'),compact('Jab'));
     }
    
-
+    public function slipexport(){
+        return Excel::download(new slip_gajihExport,'slipgajih.xlsx');
+    }
    
 }

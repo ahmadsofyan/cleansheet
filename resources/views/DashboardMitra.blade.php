@@ -41,6 +41,12 @@
                     </a>
                 </li>
                 <li>
+                    <a href="#">
+                        <i class="fa fa-print"></i>
+                        <p>Print</p>
+                    </a>
+                </li>
+                <li>
                     <a href="{{route('logout')}}">
                         <i class="pe-7s-power"></i>
                         <p>Logout</p>
@@ -61,6 +67,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="#">Mitra CleanSheet</a>
+                   
                 </div>
                 <div class="collapse navbar-collapse">
                 </div>

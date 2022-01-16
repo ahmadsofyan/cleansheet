@@ -50,10 +50,10 @@ Route::group(['middleware'=>['auth','cekrole:Admin']] ,function () {
     Route::get('/edit/{id}',[App\Http\Controllers\TambahdataController::class, 'update'])->name('update');
     Route::post('/edit/{id}',[App\Http\Controllers\TambahdataController::class, 'ubah'])->name('ubah');
     Route::get('/DashboardAdmin/{id}',[App\Http\Controllers\TampildataController::class, 'hapusdata'])->name('hapusdata');
+    Route::get('/export',[App\Http\Controllers\TambahdataController::class, 'slipexport'])->name('slipexport');
 });
 
-//Route::group(['middleware'=>['auth','cekrole:2']] ,function () {
-  
+
     Route::get('/mitra', function () {
         return view('DashboardMitra');
      
@@ -61,5 +61,3 @@ Route::group(['middleware'=>['auth','cekrole:Admin']] ,function () {
 Route::get('/mitra',[App\Http\Controllers\TampildataController::class, 'tampilmitra'])->name('tampilmitra');
 
 
-//Route::get('/DashboardAdmin',[App\Http\Controllers\AdminController::class, 'Admin'])->name('Admin');
-//});
