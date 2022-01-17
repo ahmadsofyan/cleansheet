@@ -7,6 +7,7 @@ use App\Models\User;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Controller;
 use App\Exports\slip_gajihExport;
+use App\Exports\UserExport;
 use RealRashid\SweetAlert\Facades\Alert;
 
 
@@ -56,5 +57,7 @@ class TambahdataController extends Controller
     public function slipexport(){
         return Excel::download(new slip_gajihExport,'slipgajih.xlsx');
     }
-   
+    public function Userexport(){
+        return Excel::download(new UserExport,'User.xlsx');
+    }
 }

@@ -30,5 +30,5 @@ class TampildataController extends Controller
         
          return view('DashboardMitra', ['mitra' =>  $mitra]);
      }
-
+    
 }

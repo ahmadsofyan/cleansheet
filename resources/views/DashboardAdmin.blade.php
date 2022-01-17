@@ -51,10 +51,11 @@
                       
                       <li><a href="/Tambahdata">Tambah Data</a></li>
                     </ul>
-                    <li><a href="#"><i class="fa fa-registered"></i> Export data <span class="form"></span></a>
+                    <li><a href="#"><i class="fa fa-print"></i> Export data <span class="form"></span></a>
                     <ul class="nav child_menu">
                       
                       <li><a href="/export">slip gajih</a></li>
+                      <li><a href="/userexport">User</a></li>
                     </ul>
                   </li>
                   </li>
@@ -76,8 +77,6 @@
               <nav class="nav navbar-nav">
               <ul class=" navbar-right">
                 <li class="nav-item dropdown open" >
-               
-
                   <a href="#" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
                   {{auth()->user()->name}}
                   </a>
@@ -85,6 +84,7 @@
                     <a class="dropdown-item"  href="{{route('logout')}}"><i class="fa fa-sign-out pull-right"></i> Log Out </a>
                   </div>
                 </li>
+                
               </ul>
             </nav>
           </div>
@@ -93,7 +93,7 @@
         <!-- page content - HALAMAN UTAMA ISI DISINI -->
         <div class="right_col" role="main">
   
-        <center><h2>daftar karyawan</h2></center>
+        <center><h2>Daftar Karyawan</h2></center>
           <table class="table table-striped table-hover">
             <tr>
                 <td>No</td>
@@ -115,10 +115,10 @@
             <td>{{date('d-m-y',strtotime($data->tanggal))}}</td>
             <td>{{$data->jenis_pekerjaan}}</td>
             <td>{{$data->durasi}}</td>
-            <td>{{$data->pembayaran}}</td>
-            <td>{{$data->makan}}</td>
-            <td>{{$data->transport}}</td>
-            <td>{{$data->total}}</td>
+            <td>Rp {{$data->pembayaran}}</td>
+            <td>Rp {{$data->makan}}</td>
+            <td>Rp {{$data->transport}}</td>
+            <td>Rp {{$data->total}}</td>
             <td>{{$data->status}}</td>                          
                 <td><a class="btn btn-primary" href="{{ url('/edit',$data->id) }}" role="button">Edit</a>
                 <a class="btn btn-primary" href="{{ url('/DashboardAdmin',$data->id) }}" role="button" >Delete</a>

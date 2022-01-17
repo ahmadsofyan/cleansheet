@@ -96,10 +96,10 @@
             <td>{{date('d-m-y',strtotime($view->tanggal))}}</td>
             <td>{{$view->jenis_pekerjaan}}</td>
             <td>{{$view->durasi}}</td>
-            <td>{{$view->pembayaran}}</td>
-            <td>{{$view->makan}}</td>
-            <td>{{$view->transport}}</td>
-            <td>{{$view->total}}</td>
+            <td>Rp {{$view->pembayaran}}</td>
+            <td>Rp {{$view->makan}}</td>
+            <td>Rp {{$view->transport}}</td>
+            <td>Rp {{$view->total}}</td>
             <td>{{$view->status}}</td>      
             </tr>
             @endif
