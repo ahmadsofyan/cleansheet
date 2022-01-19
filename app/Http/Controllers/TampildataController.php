@@ -24,11 +24,25 @@ class TampildataController extends Controller
         return back();
     }
 
+    public function kosongdata(){
+        slip_gajih::truncate();
+        Alert::success('Congrats', 'semua data dihapus');
+        return back();
+
+    }
+
+
      public function tampilmitra(){
        
         $mitra = slip_gajih::with('user')->get();
         
          return view('DashboardMitra', ['mitra' =>  $mitra]);
+     }
+     public function printmitra(){
+       
+        $mitra = slip_gajih::with('user')->get();
+        
+         return view('printslip', ['mitra' =>  $mitra]);
      }
     
 }

@@ -50,6 +50,7 @@ Route::group(['middleware'=>['auth','cekrole:Admin']] ,function () {
     Route::get('/edit/{id}',[App\Http\Controllers\TambahdataController::class, 'update'])->name('update');
     Route::post('/edit/{id}',[App\Http\Controllers\TambahdataController::class, 'ubah'])->name('ubah');
     Route::get('/DashboardAdmin/{id}',[App\Http\Controllers\TampildataController::class, 'hapusdata'])->name('hapusdata');
+    Route::get('/hapusdata',[App\Http\Controllers\TampildataController::class, 'kosongdata'])->name('kosongdata');
     Route::get('/export',[App\Http\Controllers\TambahdataController::class, 'slipexport'])->name('slipexport');
     Route::get('/userexport',[App\Http\Controllers\TambahdataController::class, 'Userexport'])->name('Userexport');
 });
@@ -60,6 +61,11 @@ Route::group(['middleware'=>['auth','cekrole:Admin']] ,function () {
         return view('DashboardMitra');
      
 });
+Route::get('/printslip', function () {
+    return view('printslip');
+ 
+});
 Route::get('/mitra',[App\Http\Controllers\TampildataController::class, 'tampilmitra'])->name('tampilmitra');
+Route::get('/printslip',[App\Http\Controllers\TampildataController::class, 'printmitra'])->name('printmitra');
 
 

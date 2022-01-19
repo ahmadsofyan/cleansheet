@@ -84,7 +84,9 @@
                     <a class="dropdown-item"  href="{{route('logout')}}"><i class="fa fa-sign-out pull-right"></i> Log Out </a>
                   </div>
                 </li>
-                
+                <li>
+                <a class="btn btn-primary" style="margin-right:30px ;" href="/hapusdata" role="button">delete all</a>
+                </li>
               </ul>
             </nav>
           </div>

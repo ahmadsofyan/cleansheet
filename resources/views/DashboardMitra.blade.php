@@ -41,7 +41,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/printslip" target="_blank">
                         <i class="fa fa-print"></i>
                         <p>Print</p>
                     </a>
