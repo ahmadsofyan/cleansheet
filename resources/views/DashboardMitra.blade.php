@@ -31,6 +31,10 @@
                 <a href="#" class="simple-text">
                 {{auth()->user()->name}}
                 </a>
+                <a href="#" class="simple-text">
+                {{auth()->user()->norek}}
+                {{auth()->user()->Bank}}
+                </a>
             </div>
 
             <ul class="nav">
@@ -85,6 +89,7 @@
                 <td>Pembayaran</td>
                 <td>Makan</td>
                 <td>Transport</td>
+                <td>parkir</td>
                 <td>Total</td>
                 <td>Status</td>
                 
@@ -99,6 +104,7 @@
             <td>Rp {{$view->pembayaran}}</td>
             <td>Rp {{$view->makan}}</td>
             <td>Rp {{$view->transport}}</td>
+            <td>Rp {{$view->parkir}}</td>
             <td>Rp {{$view->total}}</td>
             <td>{{$view->status}}</td>      
             </tr>

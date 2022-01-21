@@ -22,6 +22,7 @@ class CreateSlipGajiTable extends Migration
             $table->bigInteger('pembayaran');
             $table->bigInteger('makan');
             $table->bigInteger('transport');
+            $table->bigInteger('parkir');
             $table->bigInteger('total');
             $table->string('status');
             $table->timestamps();

@@ -17,6 +17,10 @@
 </head>
 <body>
 	<div class="container-fluid">
+	<?php
+	date_default_timezone_set('Asia/Jakarta');
+	echo 'BULAN : ' . date('F , Y');
+	?>
 	<table class="table">
 		<thead class="table-white">
 		<tr>
@@ -25,6 +29,7 @@
 			<td>Upah</td>
 			<td>Makan</td>
 			<td>Transport</td>
+			<td>parkir</td>
 		</tr>
 		</thead>
         <?php
@@ -32,6 +37,7 @@
 		 $jumlah1 = 0;
 		 $jumlah2 = 0;
 		 $jumlah3 = 0;
+		 $jumlah4 = 0;
 		 ?>
         @foreach($mitra as $view)
             @if ($view->user->id == Auth::user()->id) 
@@ -41,10 +47,12 @@
 				<td  class="borderno"  >Rp.{{$view->pembayaran}}</td>
 				<td class="borderno" >Rp.{{$view->makan}}</td>
 				<td class="borderno"  >Rp.{{$view->transport}}</td>
+				<td class="borderno"  >Rp.{{$view->parkir}}</td>
 				<?php $jumlah += $view['pembayaran']; ?>
 				<?php $jumlah1 += $view['makan']; ?>
 				<?php $jumlah2 += $view['transport']; ?>
-				<?php $jumlah3 += $view['transport'] += $view['makan']+= $view['pembayaran']; ?>
+				<?php $jumlah4 += $view['parkir']; ?>
+				<?php $jumlah3 += $view['transport'] += $view['makan']+= $view['pembayaran']+= $view['parkir']; ?>
 			</tr>
             @endif
             @endforeach
@@ -60,10 +68,12 @@
 				<td class="borderno"  >Rp.<?php echo $jumlah ?></td>
 				<td class="borderno"  >Rp.<?php echo $jumlah1 ?></td>
 				<td class="borderno"  >Rp.<?php echo $jumlah2 ?></td>
+				<td class="borderno"  >Rp.<?php echo $jumlah4 ?></td>
 			</tr>
 			<tr>
 				<td class="borderno" colspan="2" align ="right" style="font-weight: bold; ">Total THP</td>
 				<td class="borderno" style="font-weight: bold; ">Rp. </td>
+				<td class="borderno"></td>
 				<td class="borderno"></td>
 				<td  class="borderno"style="font-weight: bold; "><?php echo $jumlah3 ?></td>
 			</tr>

@@ -22,6 +22,7 @@ class slip_gajih extends Model
          'pembayaran',
          'makan',
          'transport',
+         'parkir',
          'total',
          'status',
 

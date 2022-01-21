@@ -28,6 +28,8 @@ class LoginController extends Controller
             'email'=>$request->email,
             'password'=>bcrypt($request->password),
             'role'=>$request->role,
+            'norek'=>$request->norek,
+            'Bank'=>$request->Bank,
             'remember_token'=>Str::random(60),
         ]);
         Alert::success('Congrats', 'registrasi berhasil');

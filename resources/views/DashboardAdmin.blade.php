@@ -37,6 +37,7 @@
               </div>
               <div class="profile_info">
                 <h2>{{auth()->user()->name}}</h2>
+                
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -54,7 +55,7 @@
                     <li><a href="#"><i class="fa fa-print"></i> Export data <span class="form"></span></a>
                     <ul class="nav child_menu">
                       
-                      <li><a href="/export">slip gajih</a></li>
+                      <li><a href="/export">slip gaji</a></li>
                       <li><a href="/userexport">User</a></li>
                     </ul>
                   </li>
@@ -101,11 +102,12 @@
                 <td>No</td>
                 <td>Nama</td>
                 <td>Tanggal</td>
-                <td>Jenis Pekerjaan</td>
+                <td>Keterangan</td>
                 <td>Durasi</td>
-                <td>Pembayaran</td>
+                <td>Gaji</td>
                 <td>Makan</td>
                 <td>Transport</td>
+                <td>parkir</td>
                 <td>Total</td>
                 <td>Status</td>
                 <td>Option</td>
@@ -120,6 +122,7 @@
             <td>Rp {{$data->pembayaran}}</td>
             <td>Rp {{$data->makan}}</td>
             <td>Rp {{$data->transport}}</td>
+            <td>Rp {{$data->parkir}}</td>
             <td>Rp {{$data->total}}</td>
             <td>{{$data->status}}</td>                          
                 <td><a class="btn btn-primary" href="{{ url('/edit',$data->id) }}" role="button">Edit</a>

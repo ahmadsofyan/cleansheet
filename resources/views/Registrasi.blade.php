@@ -106,10 +106,32 @@
                   <div class="field">
                      <input type="password" name="password" placeholder="Masukan password" required>
                   </div>
+                  <div class="field">
+                     <input type="number" name="norek" placeholder="No Rekening" required>
+                  </div>
+                  <select class="field" name="Bank">
+                  <option disable value>BANK</option>
+                     <option value="BCA">BCA</option>
+                     <option value="MANDIRI">MANDIRI</option>
+                     <option value="BRI">BRI</option>
+                     <option value="BNI">BNI</option>
+                     <option value="BSI">BSI</option>
+                     <option value="DANAMON">DANAMON</option>
+                     <option value="PERMATA">PERMATA</option>
+                     <option value="MAYBANK">MAYBANK</option>
+                     <option value="CIMB NIAGA">CIMB NIAGA</option>
+                     <option value="MUAMALAT">MUAMALAT</option>
+                     <option value="MEGA">MEGA</option>
+                     <option value="BUKOPIN">OCBC NISP</option>
+                     <option value="BTPN">BTPN</option>
+                     <option value="BTN">BTN</option>
+                   </select>
+                   
                   <select class="field" name="role">
                      <option value="Admin">Admin</option>
                      <option value="Mitra">Mitra</option>
                    </select>
+
                   <div class="field btn">
                      <div class="btn-layer"></div>
                      <input type="submit" value="Daftar">

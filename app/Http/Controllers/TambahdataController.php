@@ -29,6 +29,7 @@ class TambahdataController extends Controller
    'pembayaran'=>$request->pembayaran,
    'makan'=>$request->makan,
    'transport'=>$request->transport,
+   'parkir'=>$request->parkir,
    'total'=>$request->total,
     'status'=>$request->status,
         ]);

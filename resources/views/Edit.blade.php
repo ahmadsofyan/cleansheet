@@ -109,17 +109,13 @@
             </select>
           
           <div class="field">
-            <input type="date" name="tanggal" placeholder="userid" value="{{$ganti->tanggal}}" required>
+            <input type="date" name="tanggal"  value="{{$ganti->tanggal}}" required>
           </div>
           
-            <select class="field" name="jenis_pekerjaan">
-            <option value="{{$ganti->jenis_pekerjaan}}">{{$ganti->jenis_pekerjaan}}</option>
-              <option value="General Cleaning">General Cleaning</option>
-              <option value="Deep Cleaning">Deep Cleaning</option>
-              <option value="Hydrovacum">Hydrovacum</option>
-              <option value="Cuci Kasur">Cuci Kasur</option>
-              <option value="Cuci Sofa">Cuci Sofa</option>
-            </select>
+          <div class="field">
+            <input type="text" name="keterangan" placeholder="keterangan" value="{{$ganti->jenis_pekerjaan}}" required>
+          </div>
+           
             <div class="field">
             <input type="text" name="durasi" placeholder="durasi" value="{{$ganti->durasi}}" required>
           </div>
@@ -131,6 +127,9 @@
           </div>
           <div class="field">
             <input type="number" name="transport" id="trans" onkeyup="sum();" value="{{$ganti->transport}}" placeholder="transport">
+          </div>
+          <div class="field">
+            <input type="number" name="parkir" id="pkr" onkeyup="sum();" value="{{$ganti->parkir}}" placeholder="parkir">
           </div>
           <div class="field">
             <input type="number" name="total" id="hasil" onkeyup="sum();" value="{{$ganti->total}}" placeholder="total"  readonly>
@@ -166,7 +165,8 @@
       var txtFirstNumberValue = document.getElementById('bayar').value;
       var txtSecondNumberValue = document.getElementById('maem').value;
       var txtThirdNumberValue = document.getElementById('trans').value;
-      var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue) + parseInt(txtThirdNumberValue);
+      var txtFourNumberValue = document.getElementById('pkr').value;
+      var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue) + parseInt(txtThirdNumberValue)  + parseInt(txtFourNumberValue);
       if (!isNaN(result)) {
         document.getElementById('hasil').value = result;
       }

@@ -22,6 +22,8 @@ class User extends Authenticatable
         'email',
         'password',
         'role',
+        'norek',
+        'Bank'
         
     ];
     public function slip_gajih(){

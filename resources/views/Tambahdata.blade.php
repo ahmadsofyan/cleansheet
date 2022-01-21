@@ -110,14 +110,9 @@
           <div class="field">
             <input type="date" name="tanggal" placeholder="userid"  required>
           </div>
-          
-            <select class="field" name="jenis_pekerjaan">
-              <option value="GeneralCleaning">General Cleaning</option>
-              <option value="DeepCleaning">Deep Cleaning</option>
-              <option value="Hydrovacum">Hydrovacum</option>
-              <option value="CuciKasur">Cuci Kasur</option>
-              <option value="CuciSofa">Cuci Sofa</option>
-            </select>
+          <div class="field">
+            <input type="text" name="jenis_pekerjaan" placeholder="keterangan"  required>
+          </div>
             <div class="field">
             <input type="text" name="durasi" placeholder="durasi"  required>
           </div>
@@ -129,6 +124,9 @@
           </div>
           <div class="field">
             <input type="number" name="transport" id="trans" onkeyup="sum();" placeholder="transport">
+          </div>
+          <div class="field">
+            <input type="number" name="parkir" id="pkr" onkeyup="sum();" placeholder="parkir">
           </div>
           <div class="field">
             <input type="number" name="total" id="hasil" onkeyup="sum();" placeholder="total"  readonly>
@@ -163,7 +161,8 @@
       var txtFirstNumberValue = document.getElementById('bayar').value;
       var txtSecondNumberValue = document.getElementById('maem').value;
       var txtThirdNumberValue = document.getElementById('trans').value;
-      var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue) + parseInt(txtThirdNumberValue);
+      var txtTfourNumberValue = document.getElementById('pkr').value;
+      var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue) + parseInt(txtThirdNumberValue) + parseInt(txtTfourNumberValue);
       if (!isNaN(result)) {
         document.getElementById('hasil').value = result;
       }
