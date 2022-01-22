@@ -116,9 +116,7 @@
             <input type="text" name="keterangan" placeholder="keterangan" value="{{$ganti->jenis_pekerjaan}}" required>
           </div>
            
-            <div class="field">
-            <input type="text" name="durasi" placeholder="durasi" value="{{$ganti->durasi}}" required>
-          </div>
+            
           <div class="field">
             <input type="number" name="pembayaran" id="bayar" onkeyup="sum();" placeholder="pembayaran" value="{{$ganti->pembayaran}}"  >
           </div>

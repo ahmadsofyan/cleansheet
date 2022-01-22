@@ -113,9 +113,7 @@
           <div class="field">
             <input type="text" name="jenis_pekerjaan" placeholder="keterangan"  required>
           </div>
-            <div class="field">
-            <input type="text" name="durasi" placeholder="durasi"  required>
-          </div>
+           
           <div class="field">
             <input type="number" name="pembayaran" id="bayar" onkeyup="sum();" placeholder="pembayaran"  >
           </div>

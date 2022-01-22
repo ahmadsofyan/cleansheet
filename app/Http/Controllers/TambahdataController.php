@@ -25,7 +25,6 @@ class TambahdataController extends Controller
    'user_id'=>$request->user_id,
    'tanggal'=>$request->tanggal,
    'jenis_pekerjaan'=>$request->jenis_pekerjaan,
-   'durasi'=>$request->durasi,
    'pembayaran'=>$request->pembayaran,
    'makan'=>$request->makan,
    'transport'=>$request->transport,

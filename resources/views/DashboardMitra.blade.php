@@ -85,7 +85,6 @@
                 <td>Nama</td>
                 <td>Tanggal</td>
                 <td>Jenis Pekerjaan</td>
-                <td>Durasi</td>
                 <td>Pembayaran</td>
                 <td>Makan</td>
                 <td>Transport</td>
@@ -100,7 +99,6 @@
             <td>{{$view->user->name}}</td>
             <td>{{date('d-m-y',strtotime($view->tanggal))}}</td>
             <td>{{$view->jenis_pekerjaan}}</td>
-            <td>{{$view->durasi}}</td>
             <td>Rp {{$view->pembayaran}}</td>
             <td>Rp {{$view->makan}}</td>
             <td>Rp {{$view->transport}}</td>

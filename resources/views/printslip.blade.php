@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-	<title>table</title>
+	<title>slip gaji</title>
 <style>
 .table-white{
       border: 1px solid black;
@@ -17,11 +17,21 @@
 </head>
 <body>
 	<div class="container-fluid">
+	<table border = "1" style="border-style: none;" >
+	<td><img src="images/LOGO CLEANSHEET.png" style = "width : 150px; height: 100px; "  alt="..."></td>
+	<td style="padding-left:25px;" ><font size="3">PT CITA INDONESIA BERSIH</font><BR>
+	<font size="3">CLEANSHEET</font><BR>
+	<font size="2">Jl.Pondok Rumput No.31,Kebon Pedes,Tanah Sareal,Kota Bogor</font><BR>
+	<font size="2">Telp: 081297984971</font>
+	</td>
+</table>
+<p  style="padding-top:25px; margin-Bottom:2px;">Nama	:  {{auth()->user()->name}}</p>
+<p style="margin-Bottom:2px;">NO rekening	: {{auth()->user()->norek}}  {{auth()->user()->Bank}}</p>
 	<?php
 	date_default_timezone_set('Asia/Jakarta');
-	echo 'BULAN : ' . date('F , Y');
+	echo 'Bulan	: ' . date('F , Y');
 	?>
-	<table class="table">
+	<table class="table" style="margin-top:10px;">
 		<thead class="table-white">
 		<tr>
 			<td>Tanggal</td>

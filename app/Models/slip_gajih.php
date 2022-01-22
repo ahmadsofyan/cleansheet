@@ -18,7 +18,6 @@ class slip_gajih extends Model
         'user_id',
          'tanggal',
          'jenis_pekerjaan',
-         'durasi',
          'pembayaran',
          'makan',
          'transport',
